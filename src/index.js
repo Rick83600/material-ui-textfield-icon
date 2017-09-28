@@ -37,6 +37,7 @@ export default function TextFieldIcon(props) {
     icon,
     iconPosition,
     iconProps,
+    iconStyle,
     textFieldStyle,
     ...textFieldProps
   } = props;
@@ -44,12 +45,12 @@ export default function TextFieldIcon(props) {
   return (
     <div style={styles.main}>
       <IconButton
-        style={styles.iconStyle}
+        style={{ ...styles.iconStyle, ...iconStyle }}
         {...iconProps}
       >{icon}</IconButton>
       <TextField
         name='material-ui-textfield-icon'
-        style={{ ...textFieldStyle, ...styles.textFieldStyle }}
+        style={{ ...styles.textFieldStyle, ...textFieldStyle }}
         {...textFieldProps}
       />
     </div>
@@ -59,7 +60,8 @@ export default function TextFieldIcon(props) {
 TextFieldIcon.propTypes = {
   icon: PropTypes.node.isRequired,
   iconPosition: PropTypes.string,
-  iconProps: PropTypes.object
+  iconProps: PropTypes.object,
+  iconStyle: PropTypes.object
 };
 
 TextFieldIcon.defaultProps = {

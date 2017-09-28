@@ -29,6 +29,7 @@ import TextFieldIcon from 'material-ui-textfield-icon';
 | iconPosition | `string` | after | A string use for the icon position |
 | iconProps | `object` | {} | An object of IconButton material-ui props |
 | textFieldStyle | `object` | {} | An object of material-ui textField styles |
+| iconStyle | `object` | {} | An object of material-ui IconButton styles |
 
 \* required property
 
