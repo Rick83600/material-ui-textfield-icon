@@ -35,3 +35,5 @@ import TextFieldIcon from 'material-ui-textfield-icon';
 
 ## License
 The files included in this repository are licensed under the MIT license.
+
+[mui]: http://www.material-ui.com/#/
