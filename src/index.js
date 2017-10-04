@@ -4,57 +4,65 @@ import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 
 const getStyles = props => {
+
+  const iconStyle = {
+    position: 'absolute',
+    top: 0
+  };
+
+  iconStyle[(props.iconPosition === 'before' ? 'left' : 'right')] = 0;
+
+  if (props.floatingLabelText) {
+    iconStyle.top = 23;
+  }
+
   return {
     main: {
       display: 'inline-block',
       position: 'relative',
       width: (props.fullWidth ? '100%' : '256px')
     },
-    iconStyle: (
-      props.iconPosition === 'before'
-        ? {
-            position: 'absolute',
-            left: 0,
-            bottom: 0
-          }
-        : {
-            position: 'absolute',
-            right: 0,
-            bottom: 0
-          }
-    ),
+    iconStyle,
     textFieldStyle: {
       textIndent: (props.iconPosition === 'before' ? 40 : 0)
     }
   };
 };
 
-export default function TextFieldIcon(props) {
+export default class TextFieldIcon extends React.Component {
 
-  const styles = getStyles(props);
+  constructor(props) {
+    super();
+    this.styles = getStyles(props);
+  }
 
-  const {
-    icon,
-    iconPosition,
-    iconProps,
-    iconStyle,
-    textFieldStyle,
-    ...textFieldProps
-  } = props;
+  componentWillUpdate(nextProps) {
+    this.styles = getStyles(nextProps);
+  }
 
-  return (
-    <div style={styles.main}>
-      <IconButton
-        style={{ ...styles.iconStyle, ...iconStyle }}
-        {...iconProps}
-      >{icon}</IconButton>
-      <TextField
-        name='material-ui-textfield-icon'
-        style={{ ...styles.textFieldStyle, ...textFieldStyle }}
-        {...textFieldProps}
-      />
-    </div>
-  );
+  render() {
+    const {
+      icon,
+      iconPosition,
+      iconProps,
+      iconStyle,
+      textFieldStyle,
+      ...textFieldProps
+    } = this.props;
+    return (
+      <div style={this.styles.main}>
+        <IconButton
+          style={{ ...this.styles.iconStyle, ...iconStyle }}
+          {...iconProps}
+        >{icon}</IconButton>
+        <TextField
+          name='material-ui-textfield-icon'
+          style={{ ...this.styles.textFieldStyle, ...textFieldStyle }}
+          {...textFieldProps}
+        />
+      </div>
+    );
+  }
 }
 
 TextFieldIcon.propTypes = {
