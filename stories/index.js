@@ -8,6 +8,7 @@ import { linkTo } from '@storybook/addon-links';
 
 // import { Button, Welcome } from '@storybook/react/demo';
 import TextFieldIcon from '../src/index.js';
+import Test from './test';
 
 import Help from 'material-ui/svg-icons/action/help';
 import HelpOutline from 'material-ui/svg-icons/action/help-outline';
@@ -82,5 +83,29 @@ storiesOf('material-ui-textfield-icon', module)
         icon={<Money color={'grey'} />}
         floatingLabelText='My floatingLabelText'
       />
+    </Layout>
+  ))
+  .add('With an errorText and floatingLabelText', () => (
+    <Layout>
+      <TextFieldIcon
+        hintText='My textField floating label'
+        icon={<Money color={'grey'} />}
+        floatingLabelText='My floatingLabelText'
+        errorText='This is an error !'
+      />
+    </Layout>
+  ))
+  .add('With an errorText', () => (
+    <Layout>
+      <TextFieldIcon
+        hintText='My textField'
+        icon={<Money color={'grey'} />}
+        errorText='This is an error !'
+      />
+    </Layout>
+  ))
+  .add('With a button error for test', () => (
+    <Layout>
+      <Test />
     </Layout>
   ));
