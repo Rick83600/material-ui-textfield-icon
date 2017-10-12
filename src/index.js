@@ -7,7 +7,8 @@ const getStyles = props => {
 
   const iconStyle = {
     position: 'absolute',
-    top: 0
+    top: 0,
+    zIndex: 2
   };
 
   iconStyle[(props.iconPosition === 'before' ? 'left' : 'right')] = 0;
