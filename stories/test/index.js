@@ -20,7 +20,7 @@ export default class Test extends React.Component {
     });
   }
 
-  render() {
+  render() {
     const { errorText, floatingLabelText } = this.state;
     return (
       <div>

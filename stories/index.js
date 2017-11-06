@@ -32,6 +32,9 @@ storiesOf('material-ui-textfield-icon', module)
         hintText='My textField'
         icon={<HelpOutline />}
         fullWidth={false}
+        style={{
+          width: '500px'
+        }}
       />
     </Layout>
   ))

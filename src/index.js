@@ -46,20 +46,22 @@ export default class TextFieldIcon extends React.Component {
       icon,
       iconPosition,
       iconProps,
+      style,
       iconStyle,
       textFieldStyle,
       ...textFieldProps
     } = this.props;
     return (
-      <div style={this.styles.main}>
+      <div style={{...this.styles.main, ...style}}>
         <IconButton
-          style={{ ...this.styles.iconStyle, ...iconStyle }}
+          style={{...this.styles.iconStyle, ...iconStyle}}
           {...iconProps}
         >{icon}</IconButton>
         <TextField
           name='material-ui-textfield-icon'
-          style={{ ...this.styles.textFieldStyle, ...textFieldStyle }}
+          style={{...this.styles.textFieldStyle, ...textFieldStyle}}
           {...textFieldProps}
+          fullWidth={true}
         />
       </div>
     );
