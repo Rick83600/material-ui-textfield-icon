@@ -1,3 +1,5 @@
+#### INFO: This package is useful for material-ui 0.x, You don't need it if you use material-ui v1.x !
+
 # material-ui-textfield-icon
 
 This package provide a TextFieldIcon for [Material-UI][mui].
