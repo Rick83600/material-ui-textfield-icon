@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextFieldIcon from '../../src/index.js';
 import Money from 'material-ui/svg-icons/editor/attach-money';
@@ -23,7 +23,7 @@ export default class Test extends React.Component {
   render() {
     const { errorText, floatingLabelText } = this.state;
     return (
-      <div>
+      <Fragment>
         <TextFieldIcon
           hintText='Test'
           floatingLabelText={floatingLabelText}
@@ -35,7 +35,7 @@ export default class Test extends React.Component {
           label='error'
           onClick={this.onClick}
         />
-      </div>
+      </Fragment>
     );
   }
 }
