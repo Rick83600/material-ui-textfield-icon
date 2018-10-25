@@ -1,6 +1,6 @@
 {
   "name": "material-ui-textfield-icon",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A textField icon for material-ui v0.x",
   "main": "dist/index.js",
   "scripts": {
