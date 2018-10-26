@@ -27,6 +27,7 @@ const getStyles = props => {
     iconStyle,
     textFieldStyle: {
       textIndent: props.iconPosition === 'before' ? 40 : 0,
+      width: `inherit`,
     },
   };
 };
